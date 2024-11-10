@@ -1,6 +1,5 @@
 import os
 import sys
-import tkinter as tk
 import customtkinter as ctk
 
 # dynamically adjust the PYTHONPATH
