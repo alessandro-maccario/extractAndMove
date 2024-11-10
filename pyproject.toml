@@ -6,12 +6,13 @@ authors = ["alessandro-maccario <a.maccario1@campus.unimib.it>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = ">=3.9,<3.14"
+python = ">=3.10,<3.14"
 customtkinter = "^5.2.2"
 hupper = "^1.12.1"
 customtkintermessagebox = "^0.0.4"
 pyinstaller = "^6.11.0"
 auto-py-to-exe = "^2.44.2"
+docling = "^2.4.2"
 
 
 [build-system]
