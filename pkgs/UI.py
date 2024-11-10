@@ -7,6 +7,7 @@ import customtkinter as ctk
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from pkgs.extract import ExtractSourceDestination
+from pkgs.pdf2md import Pdf2MD
 from pkgs.constants import (
     WIDTH_WINDOW_SIZE,
     HEIGHT_WINDOW_SIZE,
@@ -29,7 +30,7 @@ class ExtractAndMoveUI:
         """Initializes the main window settings."""
         self.window = ctk.CTk()
         self.window.title("Extract & Move")
-        self.window.config(padx=40, pady=50)
+        self.window.config(padx=40, pady=30)
         # Change the background color using configure
         self.window.configure(fg_color=BLUE)
 
@@ -46,8 +47,10 @@ class ExtractAndMoveUI:
     def setup_buttons(self):
         """Create the Search source folder button"""
 
-        # instantiate the search button
+        # instantiate the search and extract button (search and extract files from folders)
         self.source_folder = ExtractSourceDestination()
+        # instantiate the search and convert button (search and convert the PDF to markdown)
+        self.source_filename = Pdf2MD()
 
         self.source_folder_button = ctk.CTkButton(
             self.window,
@@ -62,3 +65,17 @@ class ExtractAndMoveUI:
             text_color="white",
         )
         self.source_folder_button.grid(row=3, column=2)
+
+        self.source_folder_button = ctk.CTkButton(
+            self.window,
+            text="Browse PDF File",
+            command=self.source_filename.search_filename,
+            fg_color=RED,
+            bg_color=BLUE,
+            hover_color=ORANGE,
+            border_width=1,
+            border_color="black",
+            font=ctk.CTkFont(family=FONT_NAME, weight="bold"),
+            text_color="white",
+        )
+        self.source_folder_button.grid(row=4, column=2, pady=10)
