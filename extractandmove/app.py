@@ -18,7 +18,7 @@ from pkgs.UI import ExtractAndMoveUI
 
 
 def main():
-    # instantiate the class PasswordManagerApp
+    # instantiate the class ExtractAndMoveUI
     ui = ExtractAndMoveUI()
 
 
